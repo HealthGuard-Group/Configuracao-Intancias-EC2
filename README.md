@@ -1,4 +1,4 @@
-# Python - HealthGuard
+# ShellScript - HealthGuard
 
 
 <h1>Repositório destinado aos Scripts de configuração das instâncias EC2 utilizando a linguagem Shell Script</h1>
