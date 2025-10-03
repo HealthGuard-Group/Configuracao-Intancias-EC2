@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 # Criação dos grupos
-echo "+================================+"
+echo "+==================================================================+"
 echo "Criando grupos..."
 groupadd health-guard
 echo "Grupo health-guard criado"
@@ -20,28 +20,28 @@ echo "Grupo back-end criado"
 groupadd devops
 echo "Grupo devops criado"
 echo "Grupos criados."
-echo "+================================+"
+echo "+==================================================================+"
 echo " "
 
 # Criação dos diretórios
-echo "=================================+"
+echo "+==================================================================+"
 echo "Criando diretórios..."
 mkdir -p /home/sistema
-echo " /home/sistema criado"
-mkdir -p  /home/sistema/aplicacao-java
+echo "/home/sistema criado"
+mkdir -p /home/sistema/aplicacao-java
 echo "/home/sistema/aplicacao-java criado"
 mkdir -p /home/sistema/aplicacao-python
 echo "/home/sistema/aplicacao-python criado"
 mkdir -p /home/sistema/banco
-echo " /home/sistema/banco criado"
+echo "/home/sistema/banco criado"
 mkdir -p /home/sistema/site-institucional
 echo "/home/sistema/site-institucional criado"
 echo "Diretórios criados em /home/sistema"
-echo "+===================================+"
+echo "+==================================================================+"
 
 echo "Atribuindo os diretorios aos seus respectivos grupos..."
 chown :health-guard /home/sistema/
-echo " Diretório 'sistema' atribuido ao grupo helth-guard"
+echo "Diretório 'sistema' atribuido ao grupo helth-guard"
 chown -R :DBA /home/sistema/banco/
 echo "Diretorio 'banco' atribuido ao grupo DBA"
 chown -R :back-end /home/sistema/aplicacao-python/
@@ -53,7 +53,7 @@ echo "Concluido"
 
 
 echo ""
-echo "+================================+"
+echo "+==================================================================+"
 echo "adicionando configurações de permissões de usuario..."
  echo "Instalando ACL('acess control list')"
   apt install acl -y
@@ -67,8 +67,8 @@ echo "adicionando configurações de permissões de usuario..."
   setfacl -m g:health-guard:r-x /home/sistema/aplicacao-python/
   echo "permissões configuradas."
   echo ""
-echo "+================================+"
-echo " Instalação de arquivos e dependencias..."
+echo "+==================================================================+"
+echo "Instalação de arquivos e dependencias..."
 echo "atualizando pacotes"
 apt update
 apt upgrade -y
@@ -79,6 +79,6 @@ echo "Docker instalado com sucesso!"
 systemctl start docker
 systemctl enable docker
 echo "Docker configurado com sucesso!"
-echo "+===============================+"
+echo "+==================================================================+"
 echo ""
 echo "Maquina configurada com sucesso!"
