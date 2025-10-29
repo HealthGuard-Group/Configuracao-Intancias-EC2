@@ -78,7 +78,34 @@ apt install docker.io -y
 echo "Docker instalado com sucesso!"
 systemctl start docker
 systemctl enable docker
+echo "Pegando imagem do banco da Health Guard"
+docker pull rfratini/imagem-banco-healthguard:0.0.2
+docker run -d --name banco-HG -p 3306:3306 imagem-banco-healthguard 
+
+echo "Container criado com sucesso"
 echo "Docker configurado com sucesso!"
 echo "+==================================================================+"
 echo ""
+echo "Configurando Site da aplicação... "
+git clone https://github.com/HealthGuard-Group/Site-institucional.git
+cd Site-Institucional
+cat > '.env.dev' <<EOF
+AMBIENTE_PROCESSO=desenvolvimento
+
+# Configurações de conexão com o banco de dados
+DB_HOST=localhost
+DB_DATABASE='HealthGuard'
+DB_USER='logan'
+DB_PASSWORD='senha-segura123'
+DB_PORT=3306
+
+# Configurações do servidor de aplicação
+APP_PORT=3333
+APP_HOST=localhost
+
+EOF
+echo "instalando node.js e npm"
+apt install npm -y
+npm i
+
 echo "Maquina configurada com sucesso!"
