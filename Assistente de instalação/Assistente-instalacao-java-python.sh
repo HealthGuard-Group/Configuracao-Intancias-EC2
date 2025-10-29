@@ -47,7 +47,7 @@ cat > '.env' <<EOF
 HOST_DB = '44.199.59.133'
 USER_DB = 'logan'
 PASSWORD_DB = 'senha-segura123'
-DATABASE_DB = 'HealtGuard'
+DATABASE_DB = 'HealthGuard'
 EOF
 
 echo "Criando venv..."
