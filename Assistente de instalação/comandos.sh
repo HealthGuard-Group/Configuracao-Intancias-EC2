@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo "|=========================================================================|"
+echo "|                       PASSO A PASSO PARA CAPTURAS                       |"
+echo "|=========================================================================|"
+echo "| EXECUTANDO CAPTURA DE PYTHON :                                          |"
+echo "| - Acesse a pasta 'Scripts' que esta no repositório 'Aplicacao-Python'   |"
+echo "| Para executar a captura de python insira no teminal:                    |"
+echo "| - 'source venv/bin/activate' (para ativar o ambiente)                   |" 
+echo "| - 'python3 ScriptCapturaPython.py' (para iniciar o script )             |"
+echo "|                                                                         |" 
+echo "| EXECUTANDO CAPTURA DE JAVA                                              |" 
+echo "| - Acesse a pasta que está o arquivo .jar                                |"
+echo "| Para executar arquivo java insira no terminal:                          |"
+echo "| -'java -jar healthguard_api_looca-1.0-SNAPSHOT.jar'                     |"
+echo "|                                                                         |" 
+echo "|=========================================================================|"
