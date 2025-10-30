@@ -39,6 +39,7 @@ echo "Clonando repositório com aplicação"
 git clone https://github.com/HealthGuard-Group/Aplicacao-Python.git
 echo "Entrando no repositório clonado"
 cd Aplicacao-Python/
+chmod 220 Scripts
 cd Scripts
 
 echo "Criando .env..."
